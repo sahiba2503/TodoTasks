@@ -1,0 +1,68 @@
+.navbaritems{
+    border: 2px solid black;
+    width: 100%;
+    padding: 1rem 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    
+}
+.navbaritems button{
+    border-radius: 0.5rem;
+    margin-right: 2rem;
+    background-color: blue;
+    color:white;
+    padding: 0.5rem;
+}
+.dueDateContainer{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+}
+.manageTasks{
+    border: 2px solid red;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 10%;
+}
+.manageTasks input{
+    width: 89%;
+    margin-bottom: 1rem;
+    padding: 0.5rem 1rem;
+}
+.manageTasks button{
+    width: 50%;
+    padding: 0.5rem 0;
+    border-radius: 0.5rem;
+    background-color: green;
+    color:white;
+}
+.sideNavbarItems{
+    border: 2px solid black;
+    width: 25%;
+    height: 100vh;
+
+}
+.sideNavbarItems li{
+    margin: 1rem;
+    list-style: none;
+    border: 1px solid blue;
+    padding: 0.5rem;
+    text-align: center;
+    background-color: rgb(251, 171, 171);
+    color:black;
+}
+.todoContainer{
+    display: flex;
+    flex-direction: row;
+
+}
+.viewMainContainer{
+    border: 2px solid red;
+    width: 75%;
+    padding: 3%;
+}
