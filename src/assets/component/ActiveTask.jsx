@@ -1,11 +1,11 @@
 import SideNavbar from "./SideNavbar"
-
+import ViewActiveTask from "./ViewActiveTask"
 
 function ActiveTask() {
   return (
-    <div>
+    <div className="viewTaskDetail">
       <SideNavbar />
-      <ActiveTask />
+      <ViewActiveTask />
     </div>
   )
 }
