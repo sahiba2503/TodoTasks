@@ -1,11 +1,10 @@
-import SideNavbar from "./SideNavbar"
+
 import ViewActiveTask from "./ViewActiveTask"
 
-function ActiveTask() {
+function ActiveTask(props) {
   return (
-    <div className="viewTaskDetail">
-      <SideNavbar />
-      <ViewActiveTask />
+    <div className="viewTaskDetail">      
+      <ViewActiveTask props={props}/>
     </div>
   )
 }

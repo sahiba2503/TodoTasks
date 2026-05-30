@@ -1,11 +1,14 @@
 
-function Maincontaint() {
+function Maincontaint(props) {
   return (
     <div className="viewMainContainer">
       
-  maincontaint
+  {
+  props.task.map((item)=>(
+    <li>{item.name}</li>
+  ))
      
-      
+}
     </div>
   )
 }

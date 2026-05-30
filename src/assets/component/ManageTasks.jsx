@@ -6,7 +6,7 @@ function ManageTasks() {
       <input type="text" placeholder="Enter your task name" />
       <div className="dueDateContainer">
       <strong>Due Date</strong>
-      <input type="date" placeholder="" /></div>
+      <input type="date"  /></div>
       <input type="text" placeholder="Enter task description" />
        <button >Create</button>
     </div>

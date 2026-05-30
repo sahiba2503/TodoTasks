@@ -1,21 +1,61 @@
+//update discription name
+import ProjectRoute from "./ProjectRoute";
+// import { useState } from "react";
 
-import ManageTasks from "./ManageTasks"
-import {Routes,Route,Navigate} from "react-router-dom"
-import ActiveTask from "./ActiveTask";
-import ProgressTask from "./ProgressTask"
 function Maincomponent() {
-  return (
-  <Routes>
-    <Route path="/Manage" element={<ManageTasks/>}></Route>
-    <Route path="/View" element={< Navigate to ="/View/Active"/>}/>
-        <Route path="/View/Active" element={<ActiveTask/>}></Route>
-        <Route path="/View/Progress" element={<ProgressTask/>}></Route>
-        <Route path="/View/Done" element={<ActiveTask/>}></Route>
-         <Route path="/View/Backlog" element={<ActiveTask/>}></Route>
-        <Route path="/View/Expire" element={<ActiveTask/>}></Route>
-  </Routes>
+  // let [tasks, setTasks] = useState([]);
+  // let [taskDetail, setTaskDetail] = useState({
+  //   name: "",
+  //   dueDate: "",
+  //   currDate: "",
+  //   description: "",
+  //   status: "",
+  // });
 
-  )
+  // function handleUpdateName(name) {
+  //   setTaskDetail({
+  //     ...taskDetail,
+  //     name: name,
+  //   });
+  // }
+  // function handleUpdateDueDate(dueDate) {
+  //   setTaskDetail({
+  //     ...taskDetail,
+  //     dueDate: dueDate,
+  //   });
+  // }
+
+  // function handleUpdateDescription(description) {
+  //   setTaskDetail({
+  //     ...taskDetail,
+  //     description: description,
+  //   });
+  // }
+
+  // function CreateButtonClicked() {
+  //   if (
+  //     taskDetail.name.trim() &&
+  //     taskDetail.dueDate.trim() &&
+  //     taskDetail.description.trim()
+  //   ) {
+  //     setTasks([...tasks, taskDetail]);
+  //     setTaskDetail({
+  //       name: "",
+  //       dueDate: "",
+  //       currDate: "",
+  //       description: "",
+  //       status: "",
+  //     });
+  //   } else {
+  //     alert("please Enter Task detail");
+  //   }
+  // }
+  return (   
+    <ProjectRoute  />
+    
+  );
 }
 
-export default Maincomponent
+export default Maincomponent;
+
+
