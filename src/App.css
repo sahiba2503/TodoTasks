@@ -1,11 +1,12 @@
 .navbaritems{
     border: 2px solid black;
     width: 100%;
-    padding: 1rem 0;
     display: flex;
     flex-direction: row;
     justify-content: right;
-    
+    align-items: center;
+    height: 15vh;
+       
 }
 .navbaritems button{
     border-radius: 0.5rem;
@@ -44,7 +45,7 @@
 .sideNavbarItems{
     border: 2px solid black;
     width: 25%;
-    height: 100vh;
+    height: 85vh;
 
 }
 .sideNavbarItems li{
@@ -84,3 +85,15 @@
     list-style: none;
    
 }
+.singleTaskDetail{
+    border:1px solid black;
+    margin: 1rem 0;
+    width: 80vw;
+   
+   
+    }
+   .taskContainer{
+    /* border: 2px solid red; */
+    height: 85vh;
+    overflow: auto;
+   }
