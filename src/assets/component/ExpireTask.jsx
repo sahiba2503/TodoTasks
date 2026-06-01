@@ -1,10 +1,8 @@
 
-// import ViewProgressTask from "./ViewProgressTask"
 
-
-function ProgressTask(props) {
+function ExpireTask(props) {
   return (
-     <div>
+   <div>
      {props.tasks.map((value,index)=>(
         <div key={index}  className="singleTaskDetail">
             <div> <p><b>Task Name :</b>{value.name}</p></div>
@@ -18,6 +16,4 @@ function ProgressTask(props) {
   )
 }
 
-export default ProgressTask
-
-//  <ViewProgressTask />
+export default ExpireTask

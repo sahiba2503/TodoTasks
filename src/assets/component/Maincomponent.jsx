@@ -1,5 +1,5 @@
 //update discription name
-import ProjectRoute from "./ProjectRoute";
+import  TodoRouter from "./TodoRouter";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -14,12 +14,7 @@ function Maincomponent() {
     status: "",
   });
 
-  const handleUpdateName = (name) => {
-    setTaskDetail({
-      ...taskDetail,
-      name: name,
-    });
-  };
+  
 
   const handleUpdateStatus = (index, status) => {
     const updatedTasks = tasks.map((currentTask, idx) => {
@@ -67,6 +62,13 @@ function Maincomponent() {
     setTasks(updatedTasks);
 
   }
+  
+  const handleUpdateName = (name) => {
+    setTaskDetail({
+      ...taskDetail,
+      name: name,
+    });
+  };
 
   const handleUpdateDueDate = (dueDate) => {
     setTaskDetail({
@@ -102,13 +104,16 @@ function Maincomponent() {
     }
   }
   return (
-    <ProjectRoute
+    <TodoRouter
       handleUpdateName={handleUpdateName}
       handleUpdateDueDate={handleUpdateDueDate}
       handleUpdateDescription={handleUpdateDescription}
       CreateButtonClicked={CreateButtonClicked}
       taskDetail={taskDetail}
       tasks={tasks}
+      handleUpdateStatus={handleUpdateStatus}
+      getPrevStatus={getPrevStatus}
+      handleMoveNext={handleMoveNext}
     />
   );
 }

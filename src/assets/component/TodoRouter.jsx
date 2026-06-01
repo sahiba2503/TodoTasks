@@ -33,7 +33,7 @@
 //         /> */}
 //         {/* <Route index element={<DisplayAllTasksDetails tasks={props.tasks} />} /> */}
 //         <Route index element={<DisplayAllTasksDetails tasks={props.tasks} />} />
-        
+
 //         {/* index -> Navigate */}
 //         <Route path='Active' element={<ActiveTask />}></Route>
 //         <Route path='Progress' element={<ProgressTask />}></Route>
@@ -52,12 +52,15 @@ import ManageTasks from "./ManageTasks";
 import ViewTasks from "./ViewTasks";
 import ActiveTask from "./ActiveTask";
 import ProgressTask from "./ProgressTask";
+import BacklogTask from "./BacklogTask";
+import ExpireTask from "./ExpireTask";
+import DoneTask from "./DoneTask";
 
-function ProjectRoute(props) {
+function TodoRouter(props) {
   return (
     <Routes>
       <Route
-        path="/Manage"
+        path='/Manage'
         element={
           <ManageTasks
             handleUpdateName={props.handleUpdateName}
@@ -69,41 +72,22 @@ function ProjectRoute(props) {
         }
       />
 
-      <Route path="/View" element={<ViewTasks />}>
-        
+      <Route path='/View' element={<ViewTasks />}>
         {/* Default route */}
-        <Route
-          index
-          element={<Navigate to="Active" replace />}
-        />
+        <Route index element={<Navigate to='Active' replace />} />
 
-        <Route
-          path="Active"
-          element={<ActiveTask tasks={props.tasks} />}
-        />
+        <Route path='Active' element={<ActiveTask tasks={props.tasks} />} />
 
-        <Route
-          path="Progress"
-          element={<ProgressTask />}
-        />
+        <Route path='Progress' element={<ProgressTask tasks={props.tasks}/>} />
 
-        <Route
-          path="Done"
-          element={<ActiveTask />}
-        />
+        <Route path='Done' element={<DoneTask tasks={props.tasks}/>} />
 
-        <Route
-          path="Backlog"
-          element={<ActiveTask />}
-        />
+        <Route path='Backlog' element={<BacklogTask tasks={props.tasks}/>} />
 
-        <Route
-          path="Expire"
-          element={<ActiveTask />}
-        />
+        <Route path='Expire' element={<ExpireTask tasks={props.tasks}/>} />
       </Route>
     </Routes>
   );
 }
 
-export default ProjectRoute;
+export default TodoRouter;
