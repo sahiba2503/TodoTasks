@@ -1,5 +1,11 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: rgb(233, 227, 219);
+}
 .navbaritems{
-    border: 2px solid black;
+    /* border: 2px solid black; */
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -22,7 +28,7 @@
 
 }
 .manageTasks{
-    border: 2px solid red;
+    /* border: 2px solid red; */
     width: 80%;
     display: flex;
     flex-direction: column;
@@ -42,16 +48,11 @@
     background-color: green;
     color:white;
 }
-.sideNavbarItems{
-    border: 2px solid black;
-    width: 25%;
-    height: 85vh;
 
-}
 .sideNavbarItems li{
     margin: 1rem;
     list-style: none;
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
     padding: 0.5rem;
     text-align: center;
     background-color: rgb(251, 171, 171);
@@ -63,7 +64,7 @@
 
 }
 .viewMainContainer{
-    border: 2px solid red;
+    /* border: 2px solid red; */
     width: 75%;
     padding: 3%;
 }
@@ -72,12 +73,12 @@
     flex-direction: row;
 }
 .tasksDisplay{
-    border: 2px solid red;
+    /* border: 2px solid red; */
     width: 80%;
     height: 80vh;
 }
 .taskStatus{
-    border: 2px solid black;
+    /* border: 2px solid black; */
     width: 20%;
      height: 80vh;
 }
@@ -85,15 +86,26 @@
     list-style: none;
    
 }
-.singleTaskDetail{
-    border:1px solid black;
-    margin: 1rem 0;
-    width: 80vw;
-   
-   
+    .todoTasksContainer{
+        /* border: 2px solid red; */
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+       
     }
    .taskContainer{
-    /* border: 2px solid red; */
+    /* border: 2px solid blue; */
     height: 85vh;
-    overflow: auto;
+    width: 75%;
+    overflow-y: auto;
+   
    }
+   .sideNavbarItems{
+    /* border: 2px solid black; */
+    width: 25%;
+    height: 85vh;
+
+}
+/* .singleTaskDetail  li{
+   
+} */

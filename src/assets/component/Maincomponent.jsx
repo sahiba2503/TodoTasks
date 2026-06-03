@@ -12,7 +12,9 @@ function Maincomponent() {
     currDate: "",
     description: "",
     status: "",
-  });  
+  });
+
+  
 
   const handleUpdateStatus = (index, status) => {
     const updatedTasks = tasks.map((currentTask, idx) => {
@@ -27,6 +29,7 @@ function Maincomponent() {
       }
     });
     setTasks(updatedTasks);
+
   }
 
   const getNextStatus = (status) => {
