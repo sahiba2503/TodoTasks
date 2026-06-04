@@ -76,15 +76,15 @@ function TodoRouter(props) {
         {/* Default route */}
         <Route index element={<Navigate to='Active' replace />} />
 
-        <Route path='Active' element={<ActiveTask tasks={props.tasks} />} />
+        <Route path='Active' element={<ActiveTask tasks={props.tasks} handleMoveNext={props.handleMoveNext} />} />
 
-        <Route path='Progress' element={<ProgressTask tasks={props.tasks}/>} />
+        <Route path='Progress' element={<ProgressTask tasks={props.tasks} handleMoveNext={props.handleMoveNext}/>} />
 
-        <Route path='Done' element={<DoneTask tasks={props.tasks}/>} />
+        <Route path='Done' element={<DoneTask tasks={props.tasks} handleMoveNext={props.handleMoveNext}/>} />
 
-        <Route path='Backlog' element={<BacklogTask tasks={props.tasks}/>} />
+        <Route path='Backlog' element={<BacklogTask tasks={props.tasks} handleMoveNext={props.handleMoveNext}/>} />
 
-        <Route path='Expire' element={<ExpireTask tasks={props.tasks}/>} />
+        <Route path='Expire' element={<ExpireTask tasks={props.tasks} handleMoveNext={props.handleMoveNext}/>} />
       </Route>
     </Routes>
   );

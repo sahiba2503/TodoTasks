@@ -11,7 +11,7 @@ function Maincomponent() {
     dueDate: "",
     currDate: "",
     description: "",
-    status: "",
+    status: "active",
   });
 
   
@@ -32,12 +32,12 @@ function Maincomponent() {
 
   }
 
-  const getNextStatus = (status) => {
-    if(status === "Active") {
-      return "Completed"
-    }
-    // ...
-  }
+  // const getNextStatus = (status) => {
+  //   if(status === "Active") {
+  //     return "Completed"
+  //   }
+  //   // ...
+  // }
 
   const getPrevStatus = (status) => {
     if(status === "Active") {
@@ -45,23 +45,30 @@ function Maincomponent() {
     }
     // ...
   }
-  const handleMoveNext = (index) => {
-    const updatedTasks = tasks.map((currentTask, idx) => {
-      // currentTask.id === id
-      if(index === idx) {
-        const newNextStatus = getNextStatus(currentTask.status)
+  // const handleMoveNext = (index) => {
+  //   const updatedTasks = tasks.map((currentTask, idx) => {
+  //     // currentTask.id === id
+  //     if(index === idx) {
+  //       const newNextStatus = getNextStatus(currentTask.status)
 
-        return {
-          ...currentTask,
-          status: newNextStatus,
-        }
-      } else {
-        return currentTask
-      }
-    });
-    setTasks(updatedTasks);
+  //       return {
+  //         ...currentTask,
+  //         status: newNextStatus,
+  //       }
+  //     } else {
+  //       return currentTask
+  //     }
+  //   });
+  //   setTasks(updatedTasks);
 
-  }
+  // }
+ function handleMoveNext(index , status) {
+  const updatedTasks = [...tasks];
+
+  updatedTasks[index].status = status;
+
+  setTasks(updatedTasks);
+}
   
   const handleUpdateName = (name) => {
     setTaskDetail({
