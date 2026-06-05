@@ -1,11 +1,5 @@
-
-
 function ViewActiveTask() {
-  return (
-    <div>
-        ViewActiveTask
-    </div>
-  )
+  return <div>ViewActiveTask</div>;
 }
 
-export default ViewActiveTask
+export default ViewActiveTask;

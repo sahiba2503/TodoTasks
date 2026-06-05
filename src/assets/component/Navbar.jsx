@@ -1,13 +1,12 @@
-
-import { useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom";
 function Navbar() {
-    let navigate = useNavigate();
+  let navigate = useNavigate();
   return (
-    <div className="navbaritems">
-      <button onClick={()=>navigate("/Manage")}>Manage</button>
-      <button onClick={()=>navigate("/View")}>View</button>
+    <div className='navbaritems'>
+      <button onClick={() => navigate("/Manage")}>Manage</button>
+      <button onClick={() => navigate("/View")}>View</button>
     </div>
-  )
+  );
 }
 
-export default Navbar
+export default Navbar;

@@ -5,7 +5,7 @@ function DisplayData(props) {
     <div>
       <div>{props.data}</div>
     </div>
-  )
+  );
 }
 
-export default DisplayData
+export default DisplayData;

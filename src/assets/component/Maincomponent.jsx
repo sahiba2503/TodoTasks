@@ -1,5 +1,5 @@
 //update discription name
-import  TodoRouter from "./TodoRouter";
+import TodoRouter from "./TodoRouter";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -14,23 +14,20 @@ function Maincomponent() {
     status: "active",
   });
 
-  
-
-  const handleUpdateStatus = (index, status) => {
-    const updatedTasks = tasks.map((currentTask, idx) => {
-      // currentTask.id === id
-      if(index === idx) {
-        return {
-          ...currentTask,
-          status,
-        }
-      } else {
-        return currentTask
-      }
-    });
-    setTasks(updatedTasks);
-
-  }
+  // const handleUpdateStatus = (index, status) => {
+  //   const updatedTasks = tasks.map((currentTask, idx) => {
+  //     // currentTask.id === id
+  //     if (index === idx) {
+  //       return {
+  //         ...currentTask,
+  //         status,
+  //       };
+  //     } else {
+  //       return currentTask;
+  //     }
+  //   });
+  //   setTasks(updatedTasks);
+  // };
 
   // const getNextStatus = (status) => {
   //   if(status === "Active") {
@@ -39,12 +36,12 @@ function Maincomponent() {
   //   // ...
   // }
 
-  const getPrevStatus = (status) => {
-    if(status === "Active") {
-      return "Backlog"
-    }
-    // ...
-  }
+  // const getPrevStatus = (status) => {
+  //   if (status === "Active") {
+  //     return "Backlog";
+  //   }
+  //   // ...
+  // };
   // const handleMoveNext = (index) => {
   //   const updatedTasks = tasks.map((currentTask, idx) => {
   //     // currentTask.id === id
@@ -62,14 +59,22 @@ function Maincomponent() {
   //   setTasks(updatedTasks);
 
   // }
- function handleMoveNext(index , status) {
-  const updatedTasks = [...tasks];
+  function handleMoveNext(index, status) {
+    const updatedTasks = [...tasks];
 
-  updatedTasks[index].status = status;
+    updatedTasks[index].status = status;
 
-  setTasks(updatedTasks);
-}
-  
+    setTasks(updatedTasks);
+  }
+
+   function handleMovePre(index, status) {
+    const updatedTasks = [...tasks];
+
+    updatedTasks[index].status = status;
+
+    setTasks(updatedTasks);
+  }
+
   const handleUpdateName = (name) => {
     setTaskDetail({
       ...taskDetail,
@@ -118,9 +123,8 @@ function Maincomponent() {
       CreateButtonClicked={CreateButtonClicked}
       taskDetail={taskDetail}
       tasks={tasks}
-      handleUpdateStatus={handleUpdateStatus}
-      getPrevStatus={getPrevStatus}
       handleMoveNext={handleMoveNext}
+      handleMovePre={handleMovePre}
     />
   );
 }

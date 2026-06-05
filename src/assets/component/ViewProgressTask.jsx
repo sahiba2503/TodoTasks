@@ -1,5 +1,3 @@
-
-
 // function ViewProgressTask() {
 //   return (
 //     <div>
@@ -57,17 +55,8 @@ function ViewProgressTask() {
   return (
     <div>
       <DisplayData data={number} />
-      <IncrementButton incrementFn={increment}  />
+      <IncrementButton incrementFn={increment} />
     </div>
   );
 }
 export default ViewProgressTask;
-
-
-
-
-
-
-
-
-
