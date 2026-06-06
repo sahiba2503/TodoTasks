@@ -83,6 +83,8 @@ function TodoRouter(props) {
               tasks={props.tasks}
               handleMoveNext={props.handleMoveNext}
               handleMovePre={props.handleMovePre}
+              handleTaskDeleted={props.handleTaskDeleted}
+              handleUpdateTask = {props.handleUpdateTask}
             />
           }
         />
@@ -94,6 +96,7 @@ function TodoRouter(props) {
               tasks={props.tasks}
               handleMoveNext={props.handleMoveNext}
               handleMovePre={props.handleMovePre}
+              handleTaskDeleted={props.handleTaskDeleted}
             />
           }
         />
@@ -105,6 +108,7 @@ function TodoRouter(props) {
               tasks={props.tasks}
               handleMoveNext={props.handleMoveNext}
               handleMovePre={props.handleMovePre}
+              handleTaskDeleted={props.handleTaskDeleted}
             />
           }
         />
@@ -115,7 +119,8 @@ function TodoRouter(props) {
             <BacklogTask
               tasks={props.tasks}
               handleMoveNext={props.handleMoveNext}
-                  />
+              handleTaskDeleted={props.handleTaskDeleted}
+            />
           }
         />
 
@@ -125,6 +130,7 @@ function TodoRouter(props) {
             <ExpireTask
               tasks={props.tasks}
               handleMovePre={props.handleMovePre}
+              handleTaskDeleted={props.handleTaskDeleted}
             />
           }
         />

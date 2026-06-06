@@ -59,6 +59,17 @@ function Maincomponent() {
   //   setTasks(updatedTasks);
 
   // }
+  // function handleUpdateTask(index){
+
+  // }
+  const handleUpdateTask = (index) => {
+  const selectedTask = tasks[index];
+
+  setTaskDetail({
+    title: selectedTask.title,
+    status: selectedTask.status
+  });
+};
   function handleMoveNext(index, status) {
     const updatedTasks = [...tasks];
 
@@ -67,7 +78,14 @@ function Maincomponent() {
     setTasks(updatedTasks);
   }
 
-   function handleMovePre(index, status) {
+  function handleMovePre(index, status) {
+    const updatedTasks = [...tasks];
+
+    updatedTasks[index].status = status;
+
+    setTasks(updatedTasks);
+  }
+  function handleTaskDeleted(index, status) {
     const updatedTasks = [...tasks];
 
     updatedTasks[index].status = status;
@@ -108,7 +126,7 @@ function Maincomponent() {
         dueDate: "",
         currDate: "",
         description: "",
-        status: "",
+        status: "active",
       });
       navigate("/View");
     } else {
@@ -125,6 +143,8 @@ function Maincomponent() {
       tasks={tasks}
       handleMoveNext={handleMoveNext}
       handleMovePre={handleMovePre}
+      handleTaskDeleted={handleTaskDeleted}
+      handleUpdateTask={handleUpdateTask}
     />
   );
 }

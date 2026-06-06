@@ -25,12 +25,16 @@ function ActiveTask(props) {
                 </p>
               </div>
               <div>
-                <span onClick={()=> props.handleMovePre(index,"active")}>⬅️</span>
+                <span onClick={() => props.handleMovePre(index, "active")}>
+                  ⬅️
+                </span>
                 <span>⬆️</span>
                 <span onClick={() => props.handleMoveNext(index, "done")}>
                   ➡️
                 </span>{" "}
-                <span>X</span>
+                <span onClick={() => props.handleTaskDeleted(index, "deleted")}>
+                  X
+                </span>
               </div>
             </div>
           );
