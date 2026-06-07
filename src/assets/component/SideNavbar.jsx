@@ -13,4 +13,4 @@ function SideNavbar() {
   );
 }
 
-export default SideNavbar;
+export default SideNavbar

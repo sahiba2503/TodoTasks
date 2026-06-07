@@ -62,14 +62,7 @@ function Maincomponent() {
   // function handleUpdateTask(index){
 
   // }
-  const handleUpdateTask = (index) => {
-  const selectedTask = tasks[index];
 
-  setTaskDetail({
-    title: selectedTask.title,
-    status: selectedTask.status
-  });
-};
   function handleMoveNext(index, status) {
     const updatedTasks = [...tasks];
 
@@ -144,7 +137,7 @@ function Maincomponent() {
       handleMoveNext={handleMoveNext}
       handleMovePre={handleMovePre}
       handleTaskDeleted={handleTaskDeleted}
-      handleUpdateTask={handleUpdateTask}
+     
     />
   );
 }
