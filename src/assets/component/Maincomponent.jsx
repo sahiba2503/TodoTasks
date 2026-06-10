@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 function Maincomponent() {
   let navigate = useNavigate();
   let [tasks, setTasks] = useState([]);
+  let [editIndex,setEditIndex] = useState(null);
   let [taskDetail, setTaskDetail] = useState({
     name: "",
     dueDate: "",
@@ -108,6 +109,7 @@ function Maincomponent() {
   };
 
   function CreateButtonClicked() {
+    if(editIndex === null){
     if (
       taskDetail.name.trim() &&
       taskDetail.dueDate.trim() &&
@@ -126,6 +128,29 @@ function Maincomponent() {
       alert("please Enter Task detail");
     }
   }
+  else{
+      const updatedlist = [...tasks];
+      updatedlist[editIndex].name = taskDetail.name;
+       updatedlist[editIndex].dueDate = taskDetail.dueDate;
+        updatedlist[editIndex].currDate = taskDetail.currDate;
+         updatedlist[editIndex].description = taskDetail.description;
+      setTasks(updatedlist);
+        setEditIndex(null);
+        
+  }
+}
+  const handleUpdateTask = (index)=>{
+      setTaskDetail({
+       name: tasks[index].name,
+    dueDate: tasks[index].dueDate,
+    currDate: "updated",
+    description: tasks[index].description,
+     status: tasks[index].status,
+       }
+    )
+     setEditIndex(index);
+      navigate("/Manage");
+  };
   return (
     <TodoRouter
       handleUpdateName={handleUpdateName}
@@ -137,7 +162,7 @@ function Maincomponent() {
       handleMoveNext={handleMoveNext}
       handleMovePre={handleMovePre}
       handleTaskDeleted={handleTaskDeleted}
-     
+     handleUpdateTask={handleUpdateTask}
     />
   );
 }

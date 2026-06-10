@@ -84,7 +84,7 @@ function TodoRouter(props) {
               handleMoveNext={props.handleMoveNext}
               handleMovePre={props.handleMovePre}
               handleTaskDeleted={props.handleTaskDeleted}
-             
+             handleUpdateTask={props.handleUpdateTask}
             />
           }
         />
