@@ -136,6 +136,13 @@ function Maincomponent() {
          updatedlist[editIndex].description = taskDetail.description;
       setTasks(updatedlist);
         setEditIndex(null);
+        setTaskDetail({
+  name: "",
+  dueDate: "",
+  currDate: "",
+  description: "",
+  status: "active",
+});
         
   }
 }
