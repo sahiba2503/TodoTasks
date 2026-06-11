@@ -143,7 +143,7 @@ function Maincomponent() {
   description: "",
   status: "active",
 });
-        
+       navigate("/View/Active");  
   }
 }
   const handleUpdateTask = (index)=>{
