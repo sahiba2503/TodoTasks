@@ -15,55 +15,7 @@ function Maincomponent() {
     status: "active",
   });
 
-  // const handleUpdateStatus = (index, status) => {
-  //   const updatedTasks = tasks.map((currentTask, idx) => {
-  //     // currentTask.id === id
-  //     if (index === idx) {
-  //       return {
-  //         ...currentTask,
-  //         status,
-  //       };
-  //     } else {
-  //       return currentTask;
-  //     }
-  //   });
-  //   setTasks(updatedTasks);
-  // };
-
-  // const getNextStatus = (status) => {
-  //   if(status === "Active") {
-  //     return "Completed"
-  //   }
-  //   // ...
-  // }
-
-  // const getPrevStatus = (status) => {
-  //   if (status === "Active") {
-  //     return "Backlog";
-  //   }
-  //   // ...
-  // };
-  // const handleMoveNext = (index) => {
-  //   const updatedTasks = tasks.map((currentTask, idx) => {
-  //     // currentTask.id === id
-  //     if(index === idx) {
-  //       const newNextStatus = getNextStatus(currentTask.status)
-
-  //       return {
-  //         ...currentTask,
-  //         status: newNextStatus,
-  //       }
-  //     } else {
-  //       return currentTask
-  //     }
-  //   });
-  //   setTasks(updatedTasks);
-
-  // }
-  // function handleUpdateTask(index){
-
-  // }
-
+  
   function handleMoveNext(index, status) {
     const updatedTasks = [...tasks];
 
@@ -175,3 +127,51 @@ function Maincomponent() {
 }
 
 export default Maincomponent;
+// const handleUpdateStatus = (index, status) => {
+  //   const updatedTasks = tasks.map((currentTask, idx) => {
+  //     // currentTask.id === id
+  //     if (index === idx) {
+  //       return {
+  //         ...currentTask,
+  //         status,
+  //       };
+  //     } else {
+  //       return currentTask;
+  //     }
+  //   });
+  //   setTasks(updatedTasks);
+  // };
+
+  // const getNextStatus = (status) => {
+  //   if(status === "Active") {
+  //     return "Completed"
+  //   }
+  //   // ...
+  // }
+
+  // const getPrevStatus = (status) => {
+  //   if (status === "Active") {
+  //     return "Backlog";
+  //   }
+  //   // ...
+  // };
+  // const handleMoveNext = (index) => {
+  //   const updatedTasks = tasks.map((currentTask, idx) => {
+  //     // currentTask.id === id
+  //     if(index === idx) {
+  //       const newNextStatus = getNextStatus(currentTask.status)
+
+  //       return {
+  //         ...currentTask,
+  //         status: newNextStatus,
+  //       }
+  //     } else {
+  //       return currentTask
+  //     }
+  //   });
+  //   setTasks(updatedTasks);
+
+  // }
+  // function handleUpdateTask(index){
+
+  // }
