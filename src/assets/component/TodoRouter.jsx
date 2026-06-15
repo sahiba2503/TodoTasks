@@ -1,4 +1,3 @@
-
 import { Routes, Route, Navigate } from "react-router-dom";
 import ManageTasks from "./ManageTasks";
 import ViewTasks from "./ViewTasks";
@@ -36,7 +35,7 @@ function TodoRouter(props) {
               handleMoveNext={props.handleMoveNext}
               handleMovePre={props.handleMovePre}
               handleTaskDeleted={props.handleTaskDeleted}
-             handleUpdateTask={props.handleUpdateTask}
+              handleUpdateTask={props.handleUpdateTask}
             />
           }
         />
@@ -62,7 +61,6 @@ function TodoRouter(props) {
               handleMoveNext={props.handleMoveNext}
               handleMovePre={props.handleMovePre}
               handleTaskDeleted={props.handleTaskDeleted}
-              
             />
           }
         />

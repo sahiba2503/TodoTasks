@@ -3,11 +3,10 @@ import TodoRouter from "./TodoRouter";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-
 function Maincomponent() {
   let navigate = useNavigate();
   let [tasks, setTasks] = useState([]);
-  let [editIndex,setEditIndex] = useState(null);
+  let [editIndex, setEditIndex] = useState(null);
   let [taskDetail, setTaskDetail] = useState({
     name: "",
     dueDate: "",
@@ -16,7 +15,6 @@ function Maincomponent() {
     status: "active",
   });
 
-  
   function handleMoveNext(index, status) {
     const updatedTasks = [...tasks];
 
@@ -62,13 +60,32 @@ function Maincomponent() {
   };
 
   function CreateButtonClicked() {
-    if(editIndex === null){
-    if (
-      taskDetail.name.trim() &&
-      taskDetail.dueDate.trim() &&
-      taskDetail.description.trim()
-    ) {
-      setTasks([...tasks, taskDetail]);
+    if (editIndex === null) {
+      if (
+        taskDetail.name.trim() &&
+        taskDetail.dueDate.trim() &&
+        taskDetail.description.trim()
+      ) {
+        setTasks([...tasks, taskDetail]);
+        setTaskDetail({
+          name: "",
+          dueDate: "",
+          currDate: "",
+          description: "",
+          status: "active",
+        });
+        navigate("/View");
+      } else {
+        alert("please Enter Task detail");
+      }
+    } else {
+      const updatedlist = [...tasks];
+      updatedlist[editIndex].name = taskDetail.name;
+      updatedlist[editIndex].dueDate = taskDetail.dueDate;
+      updatedlist[editIndex].currDate = taskDetail.currDate;
+      updatedlist[editIndex].description = taskDetail.description;
+      setTasks(updatedlist);
+      setEditIndex(null);
       setTaskDetail({
         name: "",
         dueDate: "",
@@ -76,40 +93,19 @@ function Maincomponent() {
         description: "",
         status: "active",
       });
-      navigate("/View");
-    } else {
-      alert("please Enter Task detail");
+      navigate("/View/Active");
     }
   }
-  else{
-      const updatedlist = [...tasks];
-      updatedlist[editIndex].name = taskDetail.name;
-       updatedlist[editIndex].dueDate = taskDetail.dueDate;
-        updatedlist[editIndex].currDate = taskDetail.currDate;
-         updatedlist[editIndex].description = taskDetail.description;
-      setTasks(updatedlist);
-        setEditIndex(null);
-        setTaskDetail({
-  name: "",
-  dueDate: "",
-  currDate: "",
-  description: "",
-  status: "active",
-});
-       navigate("/View/Active");  
-  }
-}
-  const handleUpdateTask = (index)=>{
-      setTaskDetail({
-       name: tasks[index].name,
-    dueDate: tasks[index].dueDate,
-    currDate: "updated",
-    description: tasks[index].description,
-     status: tasks[index].status,
-       }
-    )
-     setEditIndex(index);
-      navigate("/Manage");
+  const handleUpdateTask = (index) => {
+    setTaskDetail({
+      name: tasks[index].name,
+      dueDate: tasks[index].dueDate,
+      currDate: "updated",
+      description: tasks[index].description,
+      status: tasks[index].status,
+    });
+    setEditIndex(index);
+    navigate("/Manage");
   };
   return (
     <TodoRouter
@@ -122,57 +118,57 @@ function Maincomponent() {
       handleMoveNext={handleMoveNext}
       handleMovePre={handleMovePre}
       handleTaskDeleted={handleTaskDeleted}
-     handleUpdateTask={handleUpdateTask}
+      handleUpdateTask={handleUpdateTask}
     />
   );
 }
 
 export default Maincomponent;
 // const handleUpdateStatus = (index, status) => {
-  //   const updatedTasks = tasks.map((currentTask, idx) => {
-  //     // currentTask.id === id
-  //     if (index === idx) {
-  //       return {
-  //         ...currentTask,
-  //         status,
-  //       };
-  //     } else {
-  //       return currentTask;
-  //     }
-  //   });
-  //   setTasks(updatedTasks);
-  // };
+//   const updatedTasks = tasks.map((currentTask, idx) => {
+//     // currentTask.id === id
+//     if (index === idx) {
+//       return {
+//         ...currentTask,
+//         status,
+//       };
+//     } else {
+//       return currentTask;
+//     }
+//   });
+//   setTasks(updatedTasks);
+// };
 
-  // const getNextStatus = (status) => {
-  //   if(status === "Active") {
-  //     return "Completed"
-  //   }
-  //   // ...
-  // }
+// const getNextStatus = (status) => {
+//   if(status === "Active") {
+//     return "Completed"
+//   }
+//   // ...
+// }
 
-  // const getPrevStatus = (status) => {
-  //   if (status === "Active") {
-  //     return "Backlog";
-  //   }
-  //   // ...
-  // };
-  // const handleMoveNext = (index) => {
-  //   const updatedTasks = tasks.map((currentTask, idx) => {
-  //     // currentTask.id === id
-  //     if(index === idx) {
-  //       const newNextStatus = getNextStatus(currentTask.status)
+// const getPrevStatus = (status) => {
+//   if (status === "Active") {
+//     return "Backlog";
+//   }
+//   // ...
+// };
+// const handleMoveNext = (index) => {
+//   const updatedTasks = tasks.map((currentTask, idx) => {
+//     // currentTask.id === id
+//     if(index === idx) {
+//       const newNextStatus = getNextStatus(currentTask.status)
 
-  //       return {
-  //         ...currentTask,
-  //         status: newNextStatus,
-  //       }
-  //     } else {
-  //       return currentTask
-  //     }
-  //   });
-  //   setTasks(updatedTasks);
+//       return {
+//         ...currentTask,
+//         status: newNextStatus,
+//       }
+//     } else {
+//       return currentTaska
+//     }
+//   });
+//   setTasks(updatedTasks);
 
-  // }
-  // function handleUpdateTask(index){
+// }
+// function handleUpdateTask(index){
 
-  // }
+// }

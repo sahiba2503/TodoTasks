@@ -28,7 +28,7 @@ function ActiveTask(props) {
                 <span onClick={() => props.handleMovePre(index, "active")}>
                   ⬅️
                 </span>
-                <span onClick={()=>props.handleUpdateTask(index)}>⬆️</span>
+                <span onClick={() => props.handleUpdateTask(index)}>⬆️</span>
                 <span onClick={() => props.handleMoveNext(index, "done")}>
                   ➡️
                 </span>{" "}
