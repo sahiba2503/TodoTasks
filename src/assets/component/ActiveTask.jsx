@@ -1,6 +1,13 @@
+import { createContext, useContext } from "react";
+const TaskContext = createContext();
 function ActiveTask(props) {
+   const Task = useContext(TaskContext);
+    console.log(Task);
   return (
     <div>
+       <h2>{Task}</h2>
+      
+      <div>     
       {props.tasks.map((value, index) => {
         if (value.status === "active") {
           return (
@@ -40,6 +47,7 @@ function ActiveTask(props) {
           );
         }
       })}
+    </div>
     </div>
   );
 }

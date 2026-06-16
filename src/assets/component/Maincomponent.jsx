@@ -2,8 +2,11 @@
 import TodoRouter from "./TodoRouter";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { createContext } from "react";
+const TaskContext = createContext();
 
 function Maincomponent() {
+  const Task = "About task detail";
   let navigate = useNavigate();
   let [tasks, setTasks] = useState([]);
   let [editIndex, setEditIndex] = useState(null);
@@ -108,6 +111,7 @@ function Maincomponent() {
     navigate("/Manage");
   };
   return (
+    <TaskContext.Provider value={Task}>
     <TodoRouter
       handleUpdateName={handleUpdateName}
       handleUpdateDueDate={handleUpdateDueDate}
@@ -120,6 +124,7 @@ function Maincomponent() {
       handleTaskDeleted={handleTaskDeleted}
       handleUpdateTask={handleUpdateTask}
     />
+    </TaskContext.Provider>
   );
 }
 
