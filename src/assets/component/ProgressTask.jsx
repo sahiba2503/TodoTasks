@@ -6,8 +6,7 @@ function ActiveTask(props) {
           return (
             <div key={index} className='singleTaskDetail'>
               <div>
-                {" "}
-                <p>
+                  <p>
                   <b>Task Name :</b>
                   {value.name}
                 </p>
@@ -31,7 +30,7 @@ function ActiveTask(props) {
                 <span onClick={() => props.handleUpdateTask(index)}>⬆️</span>
                 <span onClick={() => props.handleMoveNext(index, "done")}>
                   ➡️
-                </span>{" "}
+                </span>
                 <span onClick={() => props.handleTaskDeleted(index, "deleted")}>
                   X
                 </span>
@@ -43,5 +42,4 @@ function ActiveTask(props) {
     </div>
   );
 }
-
 export default ActiveTask;

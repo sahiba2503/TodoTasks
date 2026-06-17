@@ -47,9 +47,9 @@ function ManageTasks(props) {
         }}
       />
 
-      <button onClick={props.CreateButtonClicked}>Create</button>
+      <button  onClick={props.CreateButtonClicked} >Create</button>
     </div>
   );
-}
+} 
 
 export default ManageTasks;

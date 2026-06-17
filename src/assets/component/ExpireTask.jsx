@@ -6,7 +6,7 @@ function ActiveTask(props) {
           return (
             <div key={index} className='singleTaskDetail'>
               <div>
-                {" "}
+              
                 <p>
                   <b>Task Name :</b>
                   {value.name}
@@ -28,7 +28,7 @@ function ActiveTask(props) {
                 <span onClick={() => props.handleMovePre(index, "active")}>
                   ⬅️
                 </span>
-                <span>⬆️</span>{" "}
+                <span>⬆️</span>
                 <span onClick={() => props.handleTaskDeleted(index, "deleted")}>
                   X
                 </span>

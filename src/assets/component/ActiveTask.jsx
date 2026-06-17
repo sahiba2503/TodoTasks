@@ -1,19 +1,12 @@
-import { createContext, useContext } from "react";
-const TaskContext = createContext();
 function ActiveTask(props) {
-   const Task = useContext(TaskContext);
-    console.log(Task);
   return (
     <div>
-       <h2>{Task}</h2>
-      
-      <div>     
       {props.tasks.map((value, index) => {
         if (value.status === "active") {
           return (
             <div key={index} className='singleTaskDetail'>
               <div>
-                {" "}
+              
                 <p>
                   <b>Task Name :</b>
                   {value.name}
@@ -23,6 +16,12 @@ function ActiveTask(props) {
                 <p>
                   <b>Task DueDate :</b>
                   {value.dueDate}
+                </p>
+              </div>
+              <div>
+                <p>
+                  <b>Task CreateDate :</b>
+                  {value.createDate}
                 </p>
               </div>
               <div>
@@ -38,7 +37,7 @@ function ActiveTask(props) {
                 <span onClick={()=>props.handleUpdateTask(index)}>⬆️</span>
                 <span onClick={() => props.handleMoveNext(index, "progress")}>
                   ➡️
-                </span>{" "}
+                </span>
                 <span onClick={() => props.handleTaskDeleted(index, "deleted")}>
                   X
                 </span>
@@ -47,7 +46,6 @@ function ActiveTask(props) {
           );
         }
       })}
-    </div>
     </div>
   );
 }

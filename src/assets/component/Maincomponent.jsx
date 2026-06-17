@@ -2,20 +2,18 @@
 import TodoRouter from "./TodoRouter";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { createContext } from "react";
-const TaskContext = createContext();
 
 function Maincomponent() {
-  const Task = "About task detail";
   let navigate = useNavigate();
   let [tasks, setTasks] = useState([]);
   let [editIndex, setEditIndex] = useState(null);
   let [taskDetail, setTaskDetail] = useState({
     name: "",
     dueDate: "",
-    currDate: "",
+    createDate: "",
     description: "",
     status: "active",
+    updatedTask : "",
   });
 
   function handleMoveNext(index, status) {
@@ -60,7 +58,9 @@ function Maincomponent() {
       ...taskDetail,
       description: description,
     });
-  };
+  };  
+    
+   
 
   function CreateButtonClicked() {
     if (editIndex === null) {
@@ -69,30 +69,39 @@ function Maincomponent() {
         taskDetail.dueDate.trim() &&
         taskDetail.description.trim()
       ) {
+      
+    setTaskDetail({
+      ...taskDetail,
+      createDate: new Date().toLocaleString(),
+    });
+  
+        
         setTasks([...tasks, taskDetail]);
         setTaskDetail({
           name: "",
           dueDate: "",
-          currDate: "",
+          createDate: "",
           description: "",
           status: "active",
         });
         navigate("/View");
-      } else {
+      }
+       else {
         alert("please Enter Task detail");
       }
     } else {
       const updatedlist = [...tasks];
       updatedlist[editIndex].name = taskDetail.name;
       updatedlist[editIndex].dueDate = taskDetail.dueDate;
-      updatedlist[editIndex].currDate = taskDetail.currDate;
+      updatedlist[editIndex].createDate = taskDetail.createDate;
       updatedlist[editIndex].description = taskDetail.description;
+      
       setTasks(updatedlist);
       setEditIndex(null);
       setTaskDetail({
         name: "",
         dueDate: "",
-        currDate: "",
+        createDate: "",
         description: "",
         status: "active",
       });
@@ -103,7 +112,7 @@ function Maincomponent() {
     setTaskDetail({
       name: tasks[index].name,
       dueDate: tasks[index].dueDate,
-      currDate: "updated",
+      createDate: "updated",
       description: tasks[index].description,
       status: tasks[index].status,
     });
@@ -111,7 +120,6 @@ function Maincomponent() {
     navigate("/Manage");
   };
   return (
-    <TaskContext.Provider value={Task}>
     <TodoRouter
       handleUpdateName={handleUpdateName}
       handleUpdateDueDate={handleUpdateDueDate}
@@ -123,12 +131,13 @@ function Maincomponent() {
       handleMovePre={handleMovePre}
       handleTaskDeleted={handleTaskDeleted}
       handleUpdateTask={handleUpdateTask}
+      
     />
-    </TaskContext.Provider>
   );
 }
 
 export default Maincomponent;
+
 // const handleUpdateStatus = (index, status) => {
 //   const updatedTasks = tasks.map((currentTask, idx) => {
 //     // currentTask.id === id
