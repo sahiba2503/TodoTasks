@@ -18,13 +18,12 @@ function TodoRouter(props) {
             handleUpdateDueDate={props.handleUpdateDueDate}
             handleUpdateDescription={props.handleUpdateDescription}
             CreateButtonClicked={props.CreateButtonClicked}
-            taskDetail={props.taskDetail}            
+            taskDetail={props.taskDetail}
           />
         }
       />
 
       <Route path='/View' element={<ViewTasks />}>
-        {/* Default route */}
         <Route index element={<Navigate to='Active' replace />} />
 
         <Route
@@ -35,7 +34,7 @@ function TodoRouter(props) {
               handleMoveNext={props.handleMoveNext}
               handleMovePre={props.handleMovePre}
               handleTaskDeleted={props.handleTaskDeleted}
-              handleUpdateTask={props.handleUpdateTask}               
+              handleUpdateTask={props.handleUpdateTask}
             />
           }
         />
@@ -48,7 +47,7 @@ function TodoRouter(props) {
               handleMoveNext={props.handleMoveNext}
               handleMovePre={props.handleMovePre}
               handleTaskDeleted={props.handleTaskDeleted}
-              handleUpdateTask={props.handleUpdateTask}               
+              handleUpdateTask={props.handleUpdateTask}
             />
           }
         />
@@ -60,7 +59,7 @@ function TodoRouter(props) {
               tasks={props.tasks}
               handleMoveNext={props.handleMoveNext}
               handleMovePre={props.handleMovePre}
-              handleTaskDeleted={props.handleTaskDeleted}               
+              handleTaskDeleted={props.handleTaskDeleted}
             />
           }
         />
@@ -72,7 +71,7 @@ function TodoRouter(props) {
               tasks={props.tasks}
               handleMoveNext={props.handleMoveNext}
               handleTaskDeleted={props.handleTaskDeleted}
-              handleUpdateTask={props.handleUpdateTask}                
+              handleUpdateTask={props.handleUpdateTask}
             />
           }
         />
@@ -83,11 +82,12 @@ function TodoRouter(props) {
             <ExpireTask
               tasks={props.tasks}
               handleMovePre={props.handleMovePre}
-              handleTaskDeleted={props.handleTaskDeleted}               
+              handleTaskDeleted={props.handleTaskDeleted}
             />
           }
         />
       </Route>
+      {/*here close route */}
     </Routes>
   );
 }
