@@ -50,7 +50,10 @@ function Maincomponent() {
     setTaskDetail({
       ...taskDetail,
       dueDate: dueDate,
+       createDate: new Date().toLocaleString("en-GB"),
     });
+
+
   };
 
   const handleUpdateDescription = (description) => {
@@ -70,10 +73,10 @@ function Maincomponent() {
         taskDetail.description.trim()
       ) {
       
-    setTaskDetail({
-      ...taskDetail,
-      createDate: new Date().toLocaleString(),
-    });
+    // setTaskDetail({
+    //   ...taskDetail,
+    //   createDate: new Date().toLocaleString(),
+    // });
   
         
         setTasks([...tasks, taskDetail]);
