@@ -4,9 +4,15 @@ import Navbar from "./assets/component/Navbar";
 import Maincomponent from "./assets/component/Maincomponent";
 import { useEffect } from "react";
 import { useLocation,useNavigate } from "react-router-dom";
+import { createContext } from "react";
+ export const Taskinformation = createContext();
 function App() {
   let location = useLocation();
   let navigate = useNavigate();
+
+let taskName = "Current Task";
+
+
   useEffect(()=>{
     if(location.pathname === "/"){
       navigate("/Manage");
@@ -15,7 +21,9 @@ function App() {
   return (
     <div>
       <Navbar />
+      <Taskinformation.Provider value={taskName}>
       <Maincomponent />
+      </Taskinformation.Provider>
     </div>
   )
 }

@@ -1,6 +1,12 @@
+
+import { useContext } from "react";
+import { Taskinformation } from "../../App";
+
 function ActiveTask(props) {
+  const taskStatus = useContext(Taskinformation);
   return (
     <div>
+      <h2>{taskStatus}</h2>
       {props.tasks.map((value, index) => {
         if (value.status === "active") {
           return (
