@@ -3,7 +3,7 @@
 function simpletext() {
   return (
     <div>
-      create custom hook
+      create custom hook and use context Api in this project
     </div>
   )
 }
