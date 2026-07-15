@@ -1,4 +1,6 @@
+import useToggle from "./useToggle";
 function ManageTasks(props) {
+  let [value,toggle] = useToggle();
   return (
     <div className='manageTasks'>
       <input
@@ -31,6 +33,7 @@ function ManageTasks(props) {
       />
 
       <button onClick={props.CreateButtonClicked}>Create</button>
+      <button onClick={toggle}>{value?"I am filing fresh":"I can do every things"}</button>
     </div>
   );
 }
